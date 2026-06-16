@@ -1,0 +1,35 @@
+import { z } from "zod";
+
+/** Shared property validation, used by the admin create + update routes. */
+export const propertySchema = z.object({
+  slug: z.string().min(1).optional(),
+  name: z.string().min(2).max(120),
+  locality: z.string().min(1),
+  type: z.enum(["flat", "villa", "plot"]),
+  bhk: z.coerce.number().int().min(0).max(10),
+  bathrooms: z.coerce.number().int().min(0).max(10),
+  sqftSuperBuiltUp: z.coerce.number().int().min(50),
+  sqftCarpet: z.coerce.number().int().min(50),
+  floor: z.coerce.number().int().min(0),
+  totalFloors: z.coerce.number().int().min(0),
+  facing: z.string().min(1),
+  ageYears: z.union([z.coerce.number(), z.literal("new")]),
+  price: z.coerce.number().int().min(100000),
+  maintenance: z.coerce.number().int().min(0),
+  rera: z.string().min(3).max(80),
+  status: z.enum(["available", "sold", "negotiating"]),
+  furnishing: z.enum(["full", "semi", "unfurnished"]),
+  readyToMove: z.boolean(),
+  deliveryDate: z.string().optional(),
+  description: z.string().max(2000).default(""),
+  verificationStatus: z.enum(["pending", "partial", "verified"]),
+  verificationNotes: z.string().max(2000).optional(),
+  photos: z.array(z.string()).default([]),
+  tags: z.array(z.string()).default([]),
+  locality_sentiment: z.object({
+    water: z.enum(["good", "average", "poor"]),
+    power: z.enum(["good", "average", "poor"]),
+    commute: z.enum(["easy", "moderate", "heavy"]),
+    delivery: z.enum(["fast", "normal"]),
+  }),
+});

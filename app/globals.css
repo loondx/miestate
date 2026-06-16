@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-surface-subtle: #f9faf8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gray-900 font-body antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    letter-spacing: -0.01em;
+  }
+  /* RERA numbers, prices, IDs read as data */
+  .mono {
+    @apply font-mono tracking-tight;
+  }
+  ::selection {
+    @apply bg-forest-700 text-white;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-16 sm:py-24;
+  }
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-600 focus-visible:ring-offset-2;
+  }
+
+  /* Premium surface — replaces the flat "border box" look across the app. */
+  .card-premium {
+    @apply rounded-2xl border border-gray-100 bg-white transition-all duration-300;
+    box-shadow: 0 1px 2px rgba(6, 53, 64, 0.04),
+      0 4px 16px -4px rgba(6, 53, 64, 0.08);
+  }
+  .card-premium:hover {
+    @apply -translate-y-0.5 border-forest-100;
+    box-shadow: 0 2px 6px rgba(6, 53, 64, 0.06),
+      0 18px 40px -12px rgba(6, 53, 64, 0.18);
+  }
+
+  /* Section eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-600;
+  }
+  .eyebrow-light {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-400;
+  }
+
+  /* Hairline divider with a soft gradient instead of a hard line */
+  .rule {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent;
+  }
+}
+
+@layer utilities {
+  /* Subtle dotted texture for dark teal sections */
+  .bg-dots {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Razorpay checkout iframe sits above floating WhatsApp button */
+.razorpay-container {
+  z-index: 100 !important;
+}

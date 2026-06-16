@@ -1,0 +1,75 @@
+import type { Metadata, Viewport } from "next";
+import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { SITE } from "@/lib/config";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: `${SITE.name}: ${SITE.tagline} Property clarity before the token.`,
+    template: `%s · ${SITE.name}`,
+  },
+  description: SITE.description,
+  keywords: [
+    "Bangalore property verification",
+    "property risk report",
+    "RERA check",
+    "title verification Bangalore",
+    "buy flat Bangalore",
+    "NRI property Bangalore",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: SITE.url,
+    siteName: SITE.name,
+    title: `${SITE.name}: ${SITE.tagline}`,
+    description: SITE.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name}: ${SITE.tagline}`,
+    description: SITE.description,
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#063540",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable} ${jetbrains.variable}`}
+    >
+      <body>{children}</body>
+    </html>
+  );
+}

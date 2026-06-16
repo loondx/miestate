@@ -1,0 +1,49 @@
+[
+  {
+    "id": "rep_seed_1",
+    "buyerName": "Deepak Sharma",
+    "buyerPhone": "+91 98860 11223",
+    "propertyAddress": "Resale 3 BHK, Sobha Dream Acres, Whitefield",
+    "propertySlug": "sobha-dream-acres-whitefield-3bhk",
+    "packageType": "report",
+    "amount": 4999,
+    "paymentStatus": "paid",
+    "razorpayOrderId": "order_seedDEMO001",
+    "razorpayPaymentId": "pay_seedDEMO001",
+    "reportStatus": "delivered",
+    "paidAt": "2026-06-15T11:25:00.000Z",
+    "createdAt": "2026-06-15T11:25:00.000Z",
+    "deliveredAt": "2026-06-16T08:56:08.599Z"
+  },
+  {
+    "id": "rep_seed_2",
+    "buyerName": "Rahul Singh",
+    "buyerPhone": "+91 90080 99112",
+    "propertyAddress": "2 BHK, Electronic City",
+    "packageType": "report",
+    "amount": 4999,
+    "paymentStatus": "paid",
+    "razorpayOrderId": "order_seedDEMO002",
+    "razorpayPaymentId": "pay_seedDEMO002",
+    "reportStatus": "delivered",
+    "reportPdfUrl": "https://example.com/reports/sample-report.pdf",
+    "paidAt": "2026-06-08T10:00:00.000Z",
+    "deliveredAt": "2026-06-10T16:00:00.000Z",
+    "createdAt": "2026-06-08T10:00:00.000Z"
+  },
+  {
+    "id": "rep_seed_3",
+    "buyerName": "Arun Kumar",
+    "buyerPhone": "+971 50 778 9001",
+    "propertyAddress": "Godrej Park Retreat, Sarjapur Road",
+    "propertySlug": "godrej-park-retreat-sarjapur-2bhk",
+    "packageType": "concierge",
+    "amount": 14999,
+    "paymentStatus": "paid",
+    "razorpayOrderId": "order_seedDEMO003",
+    "razorpayPaymentId": "pay_seedDEMO003",
+    "reportStatus": "in_progress",
+    "paidAt": "2026-06-11T09:00:00.000Z",
+    "createdAt": "2026-06-11T09:00:00.000Z"
+  }
+]

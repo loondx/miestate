@@ -1,0 +1,42 @@
+[
+  {
+    "id": "txn_seed_1",
+    "type": "report",
+    "amount": 4999,
+    "name": "Rahul Singh",
+    "property": "2 BHK, Electronic City",
+    "date": "2026-06-08T10:00:00.000Z",
+    "status": "received",
+    "createdAt": "2026-06-08T10:00:00.000Z"
+  },
+  {
+    "id": "txn_seed_2",
+    "type": "report",
+    "amount": 4999,
+    "name": "Deepak Sharma",
+    "property": "Sobha Dream Acres, Whitefield",
+    "date": "2026-06-15T11:25:00.000Z",
+    "status": "received",
+    "createdAt": "2026-06-15T11:25:00.000Z"
+  },
+  {
+    "id": "txn_seed_3",
+    "type": "concierge",
+    "amount": 14999,
+    "name": "Arun Kumar",
+    "property": "Godrej Park Retreat",
+    "date": "2026-06-11T09:00:00.000Z",
+    "status": "received",
+    "createdAt": "2026-06-11T09:00:00.000Z"
+  },
+  {
+    "id": "txn_seed_4",
+    "type": "commission",
+    "amount": 160000,
+    "name": "Sobha (builder channel)",
+    "property": "Sobha Dream Acres",
+    "date": "2026-06-05T09:00:00.000Z",
+    "status": "expected",
+    "createdAt": "2026-06-05T09:00:00.000Z"
+  }
+]
