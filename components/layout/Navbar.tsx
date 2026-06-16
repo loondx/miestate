@@ -9,6 +9,7 @@ import { WA } from "@/lib/whatsapp";
 
 const NAV = [
   { href: "/properties", label: "Verified properties" },
+  { href: "/plans", label: "Plans" },
   { href: "/services", label: "What we check" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

@@ -157,7 +157,9 @@ export function PaymentButton({
               <Label htmlFor="pb-name">Your name</Label>
               <Input
                 id="pb-name"
-                autoFocus
+                autoComplete="name"
+                enterKeyHint="next"
+                className="h-12"
                 value={buyer.name}
                 onChange={(e) => setBuyer({ ...buyer, name: e.target.value })}
                 placeholder="e.g. Vikram Sharma"
@@ -168,9 +170,16 @@ export function PaymentButton({
               <Label htmlFor="pb-phone">WhatsApp number</Label>
               <Input
                 id="pb-phone"
-                inputMode="tel"
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel"
+                enterKeyHint="done"
+                maxLength={10}
+                className="h-12"
                 value={buyer.phone}
-                onChange={(e) => setBuyer({ ...buyer, phone: e.target.value })}
+                onChange={(e) =>
+                  setBuyer({ ...buyer, phone: e.target.value.replace(/\D/g, "") })
+                }
                 placeholder="10-digit mobile"
               />
               {touched && !validPhone && (
@@ -182,6 +191,7 @@ export function PaymentButton({
                 <Label htmlFor="pb-addr">Property address</Label>
                 <Input
                   id="pb-addr"
+                  className="h-12"
                   value={buyer.address}
                   onChange={(e) => setBuyer({ ...buyer, address: e.target.value })}
                   placeholder="Project / locality you're considering"
@@ -191,24 +201,33 @@ export function PaymentButton({
             <button
               onClick={startPayment}
               disabled={status === "loading" || !scriptReady}
-              className={`${btnClass} flex w-full items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium disabled:opacity-50`}
+              className={`${btnClass} flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl px-5 text-[15px] font-semibold transition-all active:scale-[0.98] disabled:opacity-60`}
             >
               {status === "loading" ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" /> Starting secure payment…
                 </>
+              ) : !scriptReady ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" /> Loading secure checkout…
+                </>
               ) : (
-                `Pay ${formatINR(service.price)} securely`
+                <>
+                  <Lock className="h-4 w-4" /> Pay {formatINR(service.price)} securely
+                </>
               )}
             </button>
-            <p className="text-center text-xs text-gray-500">
-              Secured by Razorpay. Confirmation on WhatsApp.
+            <p className="flex items-center justify-center gap-1.5 text-center text-xs text-gray-500">
+              <ShieldCheck className="h-3.5 w-3.5 text-gold-500" />
+              Secured by Razorpay · Confirmation on WhatsApp
             </p>
           </div>
         ) : status === "success" ? (
-          <div className="space-y-4 text-center">
-            <CheckCircle2 className="mx-auto h-12 w-12 text-forest-600" />
-            <p className="text-sm text-gray-700">
+          <div className="space-y-4 pb-2 text-center">
+            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold-50">
+              <CheckCircle2 className="h-9 w-9 text-gold-600" />
+            </span>
+            <p className="text-[15px] text-gray-700">
               Your {service.name.toLowerCase()} is confirmed. We&apos;ll deliver
               via WhatsApp {type === "report" ? "in 48 hours" : "and get started right away"}.
             </p>
@@ -217,9 +236,9 @@ export function PaymentButton({
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-medium text-white"
+                className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 text-[15px] font-semibold text-white shadow-cta active:scale-[0.98]"
               >
-                <MessageCircle size={16} /> Open WhatsApp
+                <MessageCircle size={18} /> Open WhatsApp
               </a>
             )}
           </div>
@@ -235,7 +254,7 @@ export function PaymentButton({
             </div>
             <button
               onClick={() => setStatus("form")}
-              className={`${btnClass} w-full rounded-md px-5 py-2.5 text-sm font-medium`}
+              className={`${btnClass} min-h-[52px] w-full rounded-xl px-5 text-[15px] font-semibold active:scale-[0.98]`}
             >
               Try again
             </button>

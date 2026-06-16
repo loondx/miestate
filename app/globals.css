@@ -80,7 +80,8 @@
   }
 }
 
-/* Razorpay checkout iframe sits above floating WhatsApp button */
+/* Razorpay checkout must sit above our own modal (z-110), the dock and nav.
+   Without this, the checkout opens behind our form and can't be used. */
 .razorpay-container {
-  z-index: 100 !important;
+  z-index: 2147483000 !important;
 }

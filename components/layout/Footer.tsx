@@ -25,7 +25,7 @@ export function Footer() {
                 alt="miestate"
                 width={40}
                 height={40}
-                className="h-10 w-10 rounded-lg object-cover"
+                className="h-10 w-10 rounded-lg object-cover ring-1 ring-white/15"
               />
               <span className="font-display text-xl font-bold text-white">
                 miestate
@@ -45,6 +45,7 @@ export function Footer() {
             <h4 className="font-display text-sm font-semibold text-white">Product</h4>
             <ul className="mt-4 space-y-2.5 text-sm text-white/65">
               <li><Link href="/properties" className="transition-colors hover:text-gold-400">Verified properties</Link></li>
+              <li><Link href="/plans" className="transition-colors hover:text-gold-400">Plans &amp; pricing</Link></li>
               <li><Link href="/services#report" className="transition-colors hover:text-gold-400">Risk report · ₹4,999</Link></li>
               <li><Link href="/services#concierge" className="transition-colors hover:text-gold-400">Concierge · ₹14,999</Link></li>
             </ul>

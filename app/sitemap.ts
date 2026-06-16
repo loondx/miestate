@@ -4,7 +4,7 @@ import { getProperties } from "@/lib/data/properties";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = SITE.url.replace(/\/$/, "");
-  const staticRoutes = ["", "/properties", "/services", "/about", "/contact"].map(
+  const staticRoutes = ["", "/properties", "/plans", "/services", "/about", "/contact"].map(
     (p) => ({
       url: `${base}${p}`,
       lastModified: new Date(),
