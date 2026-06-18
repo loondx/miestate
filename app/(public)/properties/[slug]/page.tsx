@@ -42,6 +42,9 @@ export async function generateMetadata({
   if (!p) return { title: "Project not found" };
   const title = `${p.name}, ${p.locality}`;
   const desc = `${p.name} by ${p.developer} in ${p.locality}, Bangalore. ${p.priceFromLabel}. ${p.investmentSummary}`;
+  // Prefer the real property photo as a small, social-friendly JPEG. Falls back
+  // to the branded opengraph-image card when there's no hosted photo.
+  const ogPhoto = ogShareImage(p.photos);
   return {
     title: `${title} | MI Estate`,
     description: desc,
@@ -53,15 +56,35 @@ export async function generateMetadata({
       description: desc,
       url: `${SITE.url.replace(/\/$/, "")}/properties/${p.slug}`,
       siteName: "MI Estate",
-      // og:image is provided by the dynamic opengraph-image.tsx in this route.
+      images: ogPhoto ? [{ url: ogPhoto, width: 1200, height: 630, alt: p.name }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description: desc,
-      // twitter:image is provided by twitter-image.tsx in this route.
+      images: ogPhoto ? [ogPhoto] : undefined,
     },
   };
+}
+
+/** Build a 1200x630 social-share JPEG URL from a property photo, if hosted. */
+function ogShareImage(photos: string[]): string | undefined {
+  const photo = photos.find((x) => x.startsWith("http"));
+  if (!photo) return undefined;
+  try {
+    const u = new URL(photo);
+    if (u.hostname.includes("unsplash.com")) {
+      u.searchParams.set("w", "1200");
+      u.searchParams.set("h", "630");
+      u.searchParams.set("fit", "crop");
+      u.searchParams.set("fm", "jpg");
+      u.searchParams.set("q", "70");
+      u.searchParams.delete("auto");
+    }
+    return u.toString();
+  } catch {
+    return photo;
+  }
 }
 
 const STATUS_TONE: Record<Property["status"], "forest" | "success" | "warning"> = {

@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Verified Premium Properties. Expert Guidance. Faster Closings.",
   description:
     "MI Estate is a trusted Bengaluru real estate consultancy to buy, rent and resell verified property across Sarjapur Road, Whitefield, KR Puram, Outer Ring Road, Electronic City and North Bangalore. Verified listings, legal verification, home loan assistance and end-to-end guidance, book a free consultation and site visit.",
-  url: process.env.NEXT_PUBLIC_APP_URL || "https://miestate.co.in",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://www.miestate.co.in",
   city: "Bengaluru",
 } as const;
 
