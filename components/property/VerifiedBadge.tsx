@@ -1,31 +1,17 @@
-import { ShieldCheck, Clock, AlertTriangle } from "lucide-react";
-import type { VerificationStatus } from "@/types/property";
+import { ShieldCheck } from "lucide-react";
 
 /**
- * The verified badge — the single most important pixel in the product.
- * Solid brand green with white text, used on every verified property.
+ * The verified badge, the single most important pixel in the product.
+ * Solid brand gold with white text, shown on every independently-checked project.
  */
-export function VerifiedBadge({ status }: { status: VerificationStatus }) {
-  if (status === "verified") {
-    return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-gold-500 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm ring-1 ring-white/30">
-        <ShieldCheck size={12} /> Verified by miestate
-      </span>
-    );
-  }
-  if (status === "partial") {
-    return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-amber-500 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm ring-1 ring-white/30">
-        <AlertTriangle size={12} /> Partial check
-      </span>
-    );
-  }
+export function VerifiedBadge({ verified = true }: { verified?: boolean }) {
+  if (!verified) return null;
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-gray-700/90 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm">
-      <Clock size={12} /> Pending
+    <span className="inline-flex items-center gap-1 rounded-full bg-gold-500 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm ring-1 ring-white/30">
+      <ShieldCheck size={12} /> Verified by MI Estate
     </span>
   );
 }
 
 export const VERIFIED_TOOLTIP =
-  "Independently verified by miestate: title documents, encumbrance certificate, RERA registration, and fair market pricing.";
+  "Independently checked by MI Estate: RERA registration, title & ownership, plan sanctions and bank approvals, verified before we recommend it.";

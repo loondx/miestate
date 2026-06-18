@@ -7,10 +7,22 @@ import type { Lead } from "@/types/lead";
 const createSchema = z.object({
   name: z.string().min(2).max(100),
   phone: z.string().min(6).max(20),
-  requirement: z.enum(["buy", "rent", "report", "concierge", "sell"]),
-  source: z.enum(["whatsapp", "referral", "website", "reddit", "other"]),
-  budget: z.coerce.number().optional(),
-  locality: z.string().optional(),
+  requirement: z.enum([
+    "consultation",
+    "site-visit",
+    "brochure",
+    "investment",
+    "callback",
+  ]),
+  source: z.enum([
+    "website",
+    "whatsapp",
+    "referral",
+    "property-page",
+    "lead-magnet",
+    "brochure-gate",
+  ]),
+  budget: z.string().max(40).optional(),
   notes: z.string().max(1000).optional(),
   propertyInterest: z.string().optional(),
 });

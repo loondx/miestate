@@ -1,7 +1,7 @@
 import { Sidebar } from "@/components/admin/Sidebar";
 
 export const metadata = {
-  title: "Admin · miestate",
+  title: "Admin · MI Estate",
   robots: { index: false, follow: false },
 };
 

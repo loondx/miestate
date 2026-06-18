@@ -10,6 +10,9 @@ import { relativeDate } from "@/lib/utils";
 import {
   LEAD_PIPELINE,
   LEAD_STATUS_LABEL,
+  LEAD_REQUIREMENT_LABEL,
+  LEAD_INTENT_LABEL,
+  LEAD_SOURCE_LABEL,
   type Lead,
   type LeadStatus,
   type LeadRequirement,
@@ -17,8 +20,21 @@ import {
 } from "@/types/lead";
 
 const STATUSES: LeadStatus[] = [...LEAD_PIPELINE];
-const REQUIREMENTS: LeadRequirement[] = ["buy", "rent", "report", "concierge", "sell"];
-const SOURCES: LeadSource[] = ["whatsapp", "referral", "website", "reddit", "other"];
+const REQUIREMENTS: LeadRequirement[] = [
+  "consultation",
+  "site-visit",
+  "brochure",
+  "investment",
+  "callback",
+];
+const SOURCES: LeadSource[] = [
+  "website",
+  "whatsapp",
+  "referral",
+  "property-page",
+  "lead-magnet",
+  "brochure-gate",
+];
 
 const today = () => new Date().toISOString().slice(0, 10);
 
@@ -30,7 +46,7 @@ export function LeadsTable({ initial }: { initial: Lead[] }) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    requirement: "buy" as LeadRequirement,
+    requirement: "consultation" as LeadRequirement,
     source: "whatsapp" as LeadSource,
   });
 
@@ -81,12 +97,12 @@ export function LeadsTable({ initial }: { initial: Lead[] }) {
           <Input inputMode="tel" placeholder="Phone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
           <Select value={form.requirement} onChange={(e) => setForm({ ...form, requirement: e.target.value as LeadRequirement })}>
             {REQUIREMENTS.map((r) => (
-              <option key={r} value={r} className="capitalize">{r}</option>
+              <option key={r} value={r}>{LEAD_REQUIREMENT_LABEL[r]}</option>
             ))}
           </Select>
           <Select value={form.source} onChange={(e) => setForm({ ...form, source: e.target.value as LeadSource })}>
             {SOURCES.map((s) => (
-              <option key={s} value={s} className="capitalize">{s}</option>
+              <option key={s} value={s}>{LEAD_SOURCE_LABEL[s]}</option>
             ))}
           </Select>
           <Button type="submit" disabled={saving}>
@@ -135,17 +151,18 @@ export function LeadsTable({ initial }: { initial: Lead[] }) {
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="font-semibold text-gray-900">{l.name}</p>
-                      <Badge tone="neutral" className="capitalize">{l.requirement}</Badge>
-                      <Badge tone="neutral" className="capitalize">{l.source}</Badge>
+                      {l.intent && <Badge tone="success">{LEAD_INTENT_LABEL[l.intent]}</Badge>}
+                      <Badge tone="neutral">{LEAD_REQUIREMENT_LABEL[l.requirement]}</Badge>
+                      <Badge tone="neutral">{LEAD_SOURCE_LABEL[l.source]}</Badge>
                     </div>
                     <a href={`tel:${l.phone}`} className="mt-1 inline-flex items-center gap-1.5 text-sm text-forest-700">
                       <Phone className="h-3.5 w-3.5" /> {l.phone}
                     </a>
-                    {(l.budget || l.locality) && (
+                    {(l.budget || l.propertyInterest) && (
                       <p className="mt-0.5 text-xs text-gray-500">
-                        {l.budget ? `₹${(l.budget / 100000).toFixed(0)}L` : ""}
-                        {l.budget && l.locality ? " · " : ""}
-                        {l.locality || ""}
+                        {l.budget || ""}
+                        {l.budget && l.propertyInterest ? " · " : ""}
+                        {l.propertyInterest || ""}
                       </p>
                     )}
                     <p className="mt-0.5 text-xs text-gray-400">{relativeDate(l.createdAt)}</p>

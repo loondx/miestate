@@ -1,197 +1,1160 @@
 [
   {
-    "id": "prop_sobha_dream_acres",
-    "slug": "sobha-dream-acres-whitefield-3bhk",
-    "name": "Sobha Dream Acres",
-    "locality": "Whitefield",
-    "type": "flat",
-    "bhk": 3,
-    "bathrooms": 3,
-    "sqftSuperBuiltUp": 1450,
-    "sqftCarpet": 1080,
-    "floor": 7,
-    "totalFloors": 18,
-    "facing": "East",
-    "ageYears": 2,
-    "price": 8900000,
-    "maintenance": 4200,
-    "rera": "PRM/KA/RERA/1251/446/PR/171015/001456",
-    "status": "available",
-    "furnishing": "semi",
-    "readyToMove": true,
-    "description": "Spacious 3 BHK in a gated community with clubhouse, pool and 24x7 security. Independently verified by miestate: clean title, no encumbrances, RERA registered, fairly priced for Whitefield.",
-    "verificationStatus": "verified",
-    "verificationNotes": "Title chain clean from 1998. EC clear for 15 years. Builder Sobha has a strong delivery record.",
-    "photos": [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80"
+    "id": "prop_springwoods_villa",
+    "slug": "springwoods-villa-jigani-anekal-road",
+    "name": "SpringWoods Villa, 4BHK Triplex",
+    "developer": "SpringWoods (Gated Community)",
+    "locality": "Jigani–Anekal Road, Koppa Gate",
+    "corridor": "Bannerghatta / Jigani",
+    "status": "ready-to-move",
+    "featured": true,
+    "verified": true,
+    "pricePerSqftMin": 5900,
+    "pricePerSqftMax": 6000,
+    "priceFromLabel": "₹2.5 Cr (slightly negotiable)",
+    "investmentSummary": "A sprawling ~4,200 sq.ft three-level 4BHK villa in the gated SpringWoods community off Bannerghatta–Jigani Road, private garden on three sides, second-floor media room, roof terrace and covered parking for two cars.",
+    "floorsLabel": "G + 2 (triplex villa)",
+    "possession": "Ready to move, immediate possession.",
+    "configurations": [
+      {
+        "label": "4 BHK + Study Villa",
+        "note": "Triplex, guest bedroom + study on ground, 3 bedrooms on first floor, media room on second floor, plus a maid's room with attached bath and separate entry."
+      }
     ],
-    "tags": ["Clear Title", "No Litigation", "RERA Registered", "Fair Price", "Ready to Move"],
-    "locality_sentiment": { "water": "good", "power": "good", "commute": "moderate", "delivery": "fast" },
-    "createdAt": "2026-05-02T09:00:00.000Z",
-    "updatedAt": "2026-06-10T09:00:00.000Z"
+    "rera": [
+      {
+        "number": "Resale villa in a gated community, clear title; documents verified on request."
+      }
+    ],
+    "description": "A beautiful three-level villa in \"SpringWoods\", a gated private community on Jigani–Anekal Road (past Bannerghatta National Park), opposite Nisarga Layout, Koppa Gate, Bengaluru 560105. The villa sits on a 60x52 plot with approx. 4,200 sq.ft of built-up area, wrapped by a small garden on three sides and surrounded by superb natural greenery. Ground floor offers a sprawling, airy living room, a spacious open kitchen with a large adjoining store room, a huge dining area, a separate temple area, a big guest bedroom, a spacious study, a big common bathroom, a utility area and a separate maid's room with attached bathroom and its own entry. The first floor has a master bedroom with attached bathroom, large walk-in closet and a spacious balcony, two more bedrooms sharing a big common bathroom and walk-in closet, plus a family sit-out and a beautiful large verandah/terrace. The second floor houses a huge media room with a roof terrace. Priced at ₹2.5 Cr, a little negotiable.",
+    "whyThisProperty": [
+      "Ready-to-move triplex villa with ~4,200 sq.ft built-up on a 60x52 plot",
+      "Gated private community living with a big operational clubhouse",
+      "Private garden wrapping three sides, surrounded by natural greenery",
+      "Master bedroom with attached bath, walk-in closet and private balcony",
+      "Dedicated second-floor media room plus roof terrace",
+      "Full granite staircase with steel railings across all three floors",
+      "Overhead and underground (sump) water storage",
+      "Covered parking for two big cars"
+    ],
+    "idealFor": [
+      "Families wanting a spacious independent villa near Bannerghatta",
+      "Buyers who prefer ready-to-move over under-construction",
+      "End-users valuing gated-community security and greenery",
+      "Households needing a maid's room with separate entry"
+    ],
+    "locationAdvantages": [
+      {
+        "category": "Schools",
+        "items": [
+          "Sarla Birla Academy (boys' boarding school) nearby",
+          "Reputed schools along Bannerghatta Road"
+        ]
+      },
+      {
+        "category": "Nature & Leisure",
+        "items": [
+          "Bannerghatta National Park",
+          "Green, low-density surroundings"
+        ]
+      },
+      {
+        "category": "Connectivity",
+        "items": [
+          "Jigani–Anekal Road",
+          "Bannerghatta Road corridor",
+          "Electronic City via Anekal"
+        ]
+      },
+      {
+        "category": "Work Hubs",
+        "items": [
+          "Jigani & Bommasandra industrial areas",
+          "Electronic City IT belt"
+        ]
+      }
+    ],
+    "amenities": [
+      {
+        "group": "Community",
+        "items": [
+          "Gated private community",
+          "Big operational clubhouse",
+          "24/7 community security",
+          "Landscaped green surroundings"
+        ]
+      },
+      {
+        "group": "Villa Features",
+        "items": [
+          "Sprawling living room",
+          "Open kitchen with large store room",
+          "Separate temple area",
+          "Family sit-out and large verandah/terrace",
+          "Second-floor media room with roof terrace"
+        ]
+      },
+      {
+        "group": "Outdoor",
+        "items": [
+          "Private garden on three sides",
+          "Covered parking for two big cars"
+        ]
+      },
+      {
+        "group": "Core Systems",
+        "items": [
+          "Overhead water storage on roof terrace",
+          "Underground water storage (sump)",
+          "Full granite staircase with steel railings"
+        ]
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Plot & Built-up",
+        "body": "Plot size 60x52; total built-up area approx. 4,200 sq.ft across three levels (ground + first + second)."
+      },
+      {
+        "label": "Bedrooms & Baths",
+        "body": "Guest bedroom on ground floor; master bedroom (attached bath, walk-in closet, balcony) and two bedrooms (shared bathroom, walk-in closet) on first floor; separate maid's room with attached bath."
+      },
+      {
+        "label": "Staircase",
+        "body": "Full granite staircase with steel railings from ground floor to the top floor."
+      },
+      {
+        "label": "Water",
+        "body": "Large overhead storage on the roof terrace plus an underground sump."
+      }
+    ],
+    "legal": [
+      {
+        "label": "Title",
+        "body": "Clear, marketable resale title within the SpringWoods gated community; documents shared for verification on request."
+      },
+      {
+        "label": "Community",
+        "body": "Part of an established gated private community with an operational clubhouse and maintenance."
+      },
+      {
+        "label": "Advisory",
+        "body": "MI Estate arranges the site visit and helps verify documents and home-loan eligibility before you commit."
+      }
+    ],
+    "photos": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "tags": [
+      "Clear Title",
+      "Verified Project",
+      "Ready to Move"
+    ],
+    "createdAt": "2026-06-18T09:00:00.000Z",
+    "updatedAt": "2026-06-18T09:00:00.000Z"
   },
   {
-    "id": "prop_prestige_waterford",
-    "slug": "prestige-waterford-whitefield-2bhk",
-    "name": "Prestige Waterford",
-    "locality": "Whitefield",
-    "type": "flat",
-    "bhk": 2,
-    "bathrooms": 2,
-    "sqftSuperBuiltUp": 1180,
-    "sqftCarpet": 880,
-    "floor": 11,
-    "totalFloors": 24,
-    "facing": "North-East",
-    "ageYears": 1,
-    "price": 9800000,
-    "maintenance": 3800,
-    "rera": "PRM/KA/RERA/1251/446/PR/190304/002512",
-    "status": "available",
-    "furnishing": "full",
-    "readyToMove": true,
-    "description": "Premium 2 BHK by Prestige with resort-style amenities, walkable to Phoenix Marketcity. Verified clean title and RERA. Strong resale liquidity.",
-    "verificationStatus": "verified",
-    "verificationNotes": "Premium project, priced slightly above locality average but justified by resale demand.",
-    "photos": [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
-      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80"
+    "id": "prop_mana_vista",
+    "slug": "mana-vista-sarjapur-road",
+    "name": "Mana Vista",
+    "developer": "Mana Projects",
+    "locality": "Off Sarjapur Road",
+    "corridor": "Sarjapur Road",
+    "status": "under-construction",
+    "featured": true,
+    "verified": true,
+    "pricePerSqftMin": 11500,
+    "pricePerSqftMax": 13000,
+    "priceFromLabel": "₹11,500 / sq.ft. onwards",
+    "investmentSummary": "High-rise living in the heart of the Sarjapur tech-belt, with 70%+ open spaces and direct access to ORR employment hubs.",
+    "openSpacePct": 70,
+    "floorsLabel": "High-rise",
+    "possession": "Phase 1 & 2 under construction, ask for tower-wise schedules.",
+    "configurations": [
+      {
+        "label": "1 BHK",
+        "phase": "Phase 1",
+        "note": "Space-optimised, ideal for IT professionals or rental yield."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 1",
+        "note": "Balanced family layout with utility balcony, zero dead space."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 1",
+        "note": "Extra working/living room for modern families."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 2",
+        "note": "Wide functional balcony with premium fittings."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 2",
+        "note": "Expansive master bedrooms, larger wardrobe niches."
+      },
+      {
+        "label": "3 BHK 3T",
+        "phase": "Phase 2",
+        "note": "Luxury sizing, enhanced privacy and open views."
+      }
     ],
-    "tags": ["Clear Title", "No Litigation", "RERA Registered", "Ready to Move"],
-    "locality_sentiment": { "water": "good", "power": "good", "commute": "easy", "delivery": "fast" },
-    "createdAt": "2026-05-08T09:00:00.000Z",
-    "updatedAt": "2026-06-09T09:00:00.000Z"
-  },
-  {
-    "id": "prop_godrej_park_retreat",
-    "slug": "godrej-park-retreat-sarjapur-2bhk",
-    "name": "Godrej Park Retreat",
-    "locality": "Sarjapur Road",
-    "type": "flat",
-    "bhk": 2,
-    "bathrooms": 2,
-    "sqftSuperBuiltUp": 1240,
-    "sqftCarpet": 920,
-    "floor": 5,
-    "totalFloors": 14,
-    "facing": "West",
-    "ageYears": "new",
-    "price": 7400000,
-    "maintenance": 3000,
-    "rera": "PRM/KA/RERA/1251/309/PR/210118/003901",
-    "status": "available",
-    "furnishing": "unfurnished",
-    "readyToMove": false,
-    "deliveryDate": "2027-06-01",
-    "description": "Under-construction 2 BHK on the fast-appreciating Sarjapur corridor. Title and RERA verified; full locality report being finalised.",
-    "verificationStatus": "partial",
-    "verificationNotes": "Locality report pending. Title + RERA confirmed.",
-    "photos": [
-      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80"
+    "rera": [
+      {
+        "number": "Approved & registered under Karnataka RERA, number on request"
+      }
     ],
-    "tags": ["Clear Title", "RERA Registered", "Fair Price"],
-    "locality_sentiment": { "water": "average", "power": "good", "commute": "moderate", "delivery": "normal" },
-    "createdAt": "2026-05-15T09:00:00.000Z",
-    "updatedAt": "2026-06-12T09:00:00.000Z"
-  },
-  {
-    "id": "prop_brigade_eldorado",
-    "slug": "brigade-eldorado-yelahanka-2bhk",
-    "name": "Brigade Eldorado",
-    "locality": "Yelahanka",
-    "type": "flat",
-    "bhk": 2,
-    "bathrooms": 2,
-    "sqftSuperBuiltUp": 1020,
-    "sqftCarpet": 760,
-    "floor": 9,
-    "totalFloors": 15,
-    "facing": "East",
-    "ageYears": 3,
-    "price": 6200000,
-    "maintenance": 2600,
-    "rera": "PRM/KA/RERA/1250/303/PR/180923/001998",
-    "status": "negotiating",
-    "furnishing": "semi",
-    "readyToMove": true,
-    "description": "Verified 2 BHK near the airport corridor. Clean documentation. Currently under negotiation with another buyer, so talk to us before it closes.",
-    "verificationStatus": "verified",
-    "verificationNotes": "KIADB aerospace park driving demand. Clean docs.",
-    "photos": [
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80"
+    "description": "Mana Vista is a premium high-rise residential landmark by Mana Projects, positioned directly in the high-growth corridor off Sarjapur Road. Designed for modern professionals seeking a sophisticated lifestyle, panoramic views and effortless connectivity to Bengaluru's prime employment hubs.",
+    "whyThisProperty": [
+      "Prime Sarjapur Road tech-belt location with ORR access",
+      "Over 70% open space with vertical gardens and walking trails",
+      "Vaastu-compliant layouts with minimal common walls",
+      "Strong rental demand from IT professionals",
+      "High appreciation corridor (~12–14% potential to 2030)"
     ],
-    "tags": ["Clear Title", "No Litigation", "RERA Registered", "Fair Price", "Ready to Move"],
-    "locality_sentiment": { "water": "good", "power": "good", "commute": "moderate", "delivery": "normal" },
-    "createdAt": "2026-04-20T09:00:00.000Z",
+    "idealFor": [
+      "End-users seeking a modern high-rise home",
+      "Investors targeting capital appreciation",
+      "Rental-income buyers near IT hubs",
+      "NRI investors buying remotely"
+    ],
+    "locationAdvantages": [
+      {
+        "category": "IT Hubs",
+        "items": [
+          "Wipro SEZ",
+          "RGA Tech Park",
+          "ORR tech corridor",
+          "Electronic City"
+        ]
+      },
+      {
+        "category": "Schools",
+        "items": [
+          "Greenwood High",
+          "Oakridge International",
+          "Inventure Academy",
+          "DPS East"
+        ]
+      },
+      {
+        "category": "Hospitals",
+        "items": [
+          "Manipal Hospital (Sarjapur Road)",
+          "Motherhood Hospital"
+        ]
+      },
+      {
+        "category": "Transit",
+        "items": [
+          "Sarjapur Main Road",
+          "Carmelaram Railway Station",
+          "Upcoming Sarjapur Metro extension"
+        ]
+      },
+      {
+        "category": "Daily Life",
+        "items": [
+          "Decathlon",
+          "Major retail & shopping markets"
+        ]
+      }
+    ],
+    "amenities": [
+      {
+        "group": "Clubhouse & Indoor",
+        "items": [
+          "Indoor gymnasium",
+          "Central swimming pool with toddler section",
+          "Indoor games room",
+          "Yoga / meditation deck",
+          "Co-working alcoves"
+        ]
+      },
+      {
+        "group": "Sports & Outdoor",
+        "items": [
+          "Badminton court",
+          "Half-basketball court",
+          "Cricket practice net",
+          "Jogging & cycling tracks",
+          "Children's play area"
+        ]
+      },
+      {
+        "group": "Nature",
+        "items": [
+          "Reflexology pathways",
+          "Manicured central lawns",
+          "Elder-friendly sit-out plazas",
+          "Themed gardens"
+        ]
+      },
+      {
+        "group": "Core Systems",
+        "items": [
+          "100% power backup",
+          "High-speed elevators",
+          "24/7 CCTV surveillance",
+          "App-based visitor verification"
+        ]
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Construction",
+        "body": "Seismically sound monolithic RCC framed structure with superior masonry finishes."
+      },
+      {
+        "label": "Finishes",
+        "body": "Premium vitrified tiles in living/dining/kitchen; anti-skid ceramic in baths and balconies; aluminium/UPVC sliding windows with mosquito mesh."
+      },
+      {
+        "label": "Eco-friendly",
+        "body": "Rainwater harvesting, on-site STP, organic waste converters and sustainable common-area fixtures."
+      }
+    ],
+    "legal": [
+      {
+        "label": "Land Ownership & Title",
+        "body": "Clear, marketable and fully traceable title deeds; free from encumbrances, litigation or disputes."
+      },
+      {
+        "label": "Plan Sanction",
+        "body": "Cleared and approved by BDA/BBMP and local planning authorities per zonal regulations."
+      },
+      {
+        "label": "RERA Compliance",
+        "body": "Registered under Karnataka RERA for statutory tracking and milestone adherence."
+      },
+      {
+        "label": "Civic Approvals",
+        "body": "Plan sanctions, KSPCB environmental clearances and structural stability certifications verified."
+      },
+      {
+        "label": "Bank Approvals",
+        "body": "Pre-approved for home loans by SBI, HDFC, ICICI, Axis and other major lenders."
+      }
+    ],
+    "photos": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "brochureUrl": "https://drive.google.com/file/d/1mWlhmKoi96xrCgaQvhthJbNrK483sPo5/view",
+    "tags": [
+      "RERA Registered",
+      "Direct Developer",
+      "Verified Project",
+      "Bank Approved"
+    ],
+    "createdAt": "2026-06-10T09:00:00.000Z",
     "updatedAt": "2026-06-14T09:00:00.000Z"
   },
   {
-    "id": "prop_purva_palm_beach",
-    "slug": "purva-palm-beach-hebbal-3bhk",
-    "name": "Purva Palm Beach",
-    "locality": "Hebbal",
-    "type": "flat",
-    "bhk": 3,
-    "bathrooms": 3,
-    "sqftSuperBuiltUp": 1690,
-    "sqftCarpet": 1260,
-    "floor": 14,
-    "totalFloors": 22,
-    "facing": "North",
-    "ageYears": 2,
-    "price": 11900000,
-    "maintenance": 5200,
-    "rera": "PRM/KA/RERA/1250/304/PR/171019/001230",
-    "status": "available",
-    "furnishing": "semi",
-    "readyToMove": true,
-    "description": "Lakefront 3 BHK in Hebbal with premium amenities. Fully verified: clean title, no encumbrances, RERA registered, fairly priced for the micro-market.",
-    "verificationStatus": "verified",
-    "verificationNotes": "Lakefront, excellent ORR + airport connectivity.",
-    "photos": [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80"
+    "id": "prop_godrej_splendour",
+    "slug": "godrej-splendour-whitefield",
+    "name": "Godrej Splendour",
+    "developer": "Godrej Properties",
+    "locality": "Belathur, Near Whitefield",
+    "corridor": "Whitefield",
+    "status": "under-construction",
+    "featured": true,
+    "verified": true,
+    "pricePerSqftMin": 10500,
+    "pricePerSqftMax": 12900,
+    "priceFromLabel": "₹10,500 / sq.ft. onwards",
+    "investmentSummary": "A 17.76-acre smart-living township by Godrej near Whitefield, with 80%+ open space and 10-minute access to ITPL and Whitefield Metro.",
+    "landAcres": 17.76,
+    "openSpacePct": 80,
+    "floorsLabel": "G+27",
+    "possession": "Phase 1 from late 2027; Phase 2 mid-to-late 2028.",
+    "configurations": [
+      {
+        "label": "1 BHK",
+        "phase": "Phase 1",
+        "note": "Space-maximised, ideal for IT professionals or rental yield."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 1",
+        "note": "Balanced family layout with utility balcony."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 1",
+        "note": "Extra working/living room for modern families."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 2",
+        "note": "Wide functional balcony, premium fittings."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 2",
+        "note": "Expansive masters, larger wardrobe niches."
+      },
+      {
+        "label": "3 BHK 3T",
+        "phase": "Phase 2",
+        "note": "Luxury sizing, enhanced privacy, open views."
+      }
     ],
-    "tags": ["Clear Title", "No Litigation", "RERA Registered", "Fair Price", "Ready to Move"],
-    "locality_sentiment": { "water": "good", "power": "good", "commute": "easy", "delivery": "fast" },
-    "createdAt": "2026-04-28T09:00:00.000Z",
-    "updatedAt": "2026-06-08T09:00:00.000Z"
+    "rera": [
+      {
+        "phase": "Phase 1",
+        "number": "PRM/KA/RERA/1251/446/PR/160622/005001"
+      },
+      {
+        "phase": "Phase 2",
+        "number": "PRM/KA/RERA/1251/446/PR/160622/005002"
+      }
+    ],
+    "description": "Godrej Splendour is a premium, tech-enabled residential township by Godrej Properties in the heart of Belathur near Whitefield. Built around a futuristic 'smart living' theme, it blends cutting-edge digital amenities, massive green landscapes and seamless connectivity to East Bengaluru's biggest IT parks.",
+    "whyThisProperty": [
+      "Sprawling 17.76-acre master township by Godrej",
+      "Over 80% open space with multi-tier central parks",
+      "39,000+ sq.ft. dual-clubhouse with 50+ amenities",
+      "10–15 minutes from Whitefield Metro and ITPL",
+      "Mivan aluminium formwork for superior build quality"
+    ],
+    "idealFor": [
+      "End-users wanting a smart-living township home",
+      "Investors in the Whitefield growth corridor",
+      "Rental-income buyers near ITPL / Brigade Tech Gardens",
+      "NRI investors seeking a trusted developer brand"
+    ],
+    "locationAdvantages": [
+      {
+        "category": "IT Hubs",
+        "items": [
+          "ITPL",
+          "Hoodi",
+          "GR Tech Park",
+          "Brigade Tech Gardens",
+          "Outer Ring Road"
+        ]
+      },
+      {
+        "category": "Schools",
+        "items": [
+          "Whitefield Global School",
+          "The Deens Academy",
+          "Vydehi School of Excellence"
+        ]
+      },
+      {
+        "category": "Hospitals",
+        "items": [
+          "RxDx Healthcare",
+          "Vydehi Hospital",
+          "Manipal Hospital (Whitefield)"
+        ]
+      },
+      {
+        "category": "Transit",
+        "items": [
+          "Whitefield Metro (10–15 min)",
+          "Hoodi Railway Station",
+          "Old Madras Road (NH4)"
+        ]
+      },
+      {
+        "category": "Daily Life",
+        "items": [
+          "Nexus Shantiniketan",
+          "Phoenix Marketcity"
+        ]
+      }
+    ],
+    "amenities": [
+      {
+        "group": "Clubhouse & Indoor",
+        "items": [
+          "Indoor gymnasium",
+          "Temperature-controlled pool",
+          "Digital gaming zones",
+          "Co-working spaces",
+          "Mini-theatre",
+          "Pharmacy / convenience store"
+        ]
+      },
+      {
+        "group": "Sports & Outdoor",
+        "items": [
+          "Full-sized tennis court",
+          "Badminton courts",
+          "Basketball court",
+          "Skate park",
+          "Cricket practice net",
+          "Kids' play zones"
+        ]
+      },
+      {
+        "group": "Nature",
+        "items": [
+          "Reflexology pathways",
+          "Pet park",
+          "Stargazing deck",
+          "Themed gardens",
+          "Vehicle-free central promenade"
+        ]
+      },
+      {
+        "group": "Core Systems",
+        "items": [
+          "100% power backup",
+          "High-speed elevators",
+          "24/7 AI-assisted CCTV",
+          "App-based visitor access"
+        ]
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Construction",
+        "body": "Seismically sound monolithic RCC with Mivan aluminium formwork for flawless wall alignment."
+      },
+      {
+        "label": "Finishes",
+        "body": "Premium vitrified tiles in living/dining/kitchen; anti-skid ceramic in baths and balconies; UPVC sliding windows with mosquito mesh."
+      },
+      {
+        "label": "Eco-friendly",
+        "body": "Automated rainwater harvesting, on-site STP, organic waste converters and centralised solar for common-area lighting."
+      }
+    ],
+    "legal": [
+      {
+        "label": "Land Ownership & Title",
+        "body": "Clear, marketable and fully traceable title deeds; free from encumbrances or disputes."
+      },
+      {
+        "label": "Plan Sanction",
+        "body": "Approved by BDA and BBMP per zonal regulations."
+      },
+      {
+        "label": "RERA Compliance",
+        "body": "Both phases registered under Karnataka RERA (005001 / 005002)."
+      },
+      {
+        "label": "Civic Approvals",
+        "body": "Plan sanctions, KSPCB clearances and structural certifications verified."
+      },
+      {
+        "label": "Bank Approvals",
+        "body": "Pre-approved for home loans by SBI, HDFC, ICICI, Axis and other major lenders."
+      }
+    ],
+    "photos": [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "brochureUrl": "https://drive.google.com/file/d/1oswRoYFt444kUOQPRLXOTL-7Z39lBuOL/view",
+    "tags": [
+      "RERA Registered",
+      "Direct Developer",
+      "Verified Project",
+      "Bank Approved"
+    ],
+    "createdAt": "2026-06-11T09:00:00.000Z",
+    "updatedAt": "2026-06-15T09:00:00.000Z"
   },
   {
-    "id": "prop_sobha_neopolis",
-    "slug": "sobha-neopolis-bellandur-2bhk",
-    "name": "Sobha Neopolis",
-    "locality": "Bellandur",
-    "type": "flat",
-    "bhk": 2,
-    "bathrooms": 2,
-    "sqftSuperBuiltUp": 1320,
-    "sqftCarpet": 980,
-    "floor": 6,
-    "totalFloors": 30,
-    "facing": "South-East",
-    "ageYears": "new",
-    "price": 10500000,
-    "maintenance": 4000,
-    "rera": "PRM/KA/RERA/1251/446/PR/220715/005012",
-    "status": "available",
-    "furnishing": "unfurnished",
-    "readyToMove": false,
-    "deliveryDate": "2027-12-01",
-    "description": "Greek-themed township by Sobha in the heart of the ORR tech belt. Verification in progress. RERA confirmed, full report being prepared.",
-    "verificationStatus": "pending",
-    "verificationNotes": "RERA confirmed. Title + EC + fair-price checks underway.",
-    "photos": [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80"
+    "id": "prop_sobha_lake_gardens",
+    "slug": "sobha-lake-gardens-kr-puram",
+    "name": "Sobha Lake Gardens",
+    "developer": "Sobha Limited",
+    "locality": "KR Puram, Near Whitefield",
+    "corridor": "KR Puram",
+    "status": "ready-to-move",
+    "featured": true,
+    "verified": true,
+    "pricePerSqftMin": 11500,
+    "pricePerSqftMax": 13500,
+    "priceFromLabel": "₹11,500 / sq.ft. onwards",
+    "investmentSummary": "A lake-facing Sobha enclave near Whitefield, Phase 1 ready-to-move, German pre-cast build quality and A-Khata clear title.",
+    "landAcres": 8.85,
+    "openSpacePct": 75,
+    "totalUnits": 505,
+    "floorsLabel": "2B+G+18",
+    "possession": "Phase 1 ready-to-move; Phase 2 nearing completion.",
+    "configurations": [
+      {
+        "label": "1 BHK",
+        "phase": "Phase 1",
+        "note": "Highly functional, ideal for professionals or rental."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 1",
+        "note": "Spacious living with dedicated utility space."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 1",
+        "note": "Extra room for modern families."
+      },
+      {
+        "label": "3 BHK 3T",
+        "phase": "Phase 1",
+        "note": "Larger family format with added privacy."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 2",
+        "note": "Large windows for ample natural light."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 2",
+        "note": "Premium bedrooms, optimised layouts."
+      },
+      {
+        "label": "3 BHK 3T",
+        "phase": "Phase 2",
+        "note": "Luxury sizing with lake views."
+      }
     ],
-    "tags": ["RERA Registered"],
-    "locality_sentiment": { "water": "average", "power": "good", "commute": "moderate", "delivery": "fast" },
-    "createdAt": "2026-06-01T09:00:00.000Z",
-    "updatedAt": "2026-06-15T09:00:00.000Z"
+    "rera": [
+      {
+        "phase": "Phase 1",
+        "number": "PRM/KA/RERA/1251/446/PR/180524/001803"
+      },
+      {
+        "phase": "Phase 2",
+        "number": "PRM/KA/RERA/1251/446/PR/180524/001804"
+      }
+    ],
+    "description": "Sobha Lake Gardens is an exquisite lake-facing residential enclave by Sobha Limited near KR Puram. Renowned for world-class construction quality, it blends serene waterside living, expansive greens and unparalleled proximity to Bengaluru's premier IT hubs.",
+    "whyThisProperty": [
+      "Lake-facing enclave with a stunning lakeside promenade",
+      "Sobha's signature German pre-cast build quality",
+      "Phase 1 ready-to-move, zero construction risk",
+      "A-Khata, clear title under BBMP jurisdiction",
+      "Maximised carpet efficiency with legendary spatial planning"
+    ],
+    "idealFor": [
+      "End-users wanting a ready-to-move premium home",
+      "Buyers prioritising build quality and clear title",
+      "Rental-income buyers near Whitefield / ORR",
+      "NRI investors seeking a low-risk Sobha asset"
+    ],
+    "locationAdvantages": [
+      {
+        "category": "IT Hubs",
+        "items": [
+          "ITPL (Whitefield)",
+          "Manyata Tech Park",
+          "Hoodi",
+          "Outer Ring Road"
+        ]
+      },
+      {
+        "category": "Schools",
+        "items": [
+          "Sea International School",
+          "Cambridge School",
+          "New Horizon International School"
+        ]
+      },
+      {
+        "category": "Hospitals",
+        "items": [
+          "RxDx Healthcare",
+          "Sakra World Hospital"
+        ]
+      },
+      {
+        "category": "Transit",
+        "items": [
+          "KR Puram Railway Station",
+          "Old Madras Road",
+          "Purple Line Metro (nearby)"
+        ]
+      },
+      {
+        "category": "Daily Life",
+        "items": [
+          "Phoenix Marketcity",
+          "VR Bengaluru Mall"
+        ]
+      }
+    ],
+    "amenities": [
+      {
+        "group": "Clubhouse & Indoor",
+        "items": [
+          "20,000+ sq.ft. clubhouse",
+          "World-class gymnasium",
+          "Large pool with toddler pool",
+          "Indoor games room",
+          "Banquet hall"
+        ]
+      },
+      {
+        "group": "Sports & Outdoor",
+        "items": [
+          "Badminton courts",
+          "Tennis court",
+          "Half-basketball court",
+          "Jogging & cycling tracks",
+          "Kids' play zones"
+        ]
+      },
+      {
+        "group": "Nature",
+        "items": [
+          "Lake-facing promenade",
+          "Reflexology pathways",
+          "Senior-citizen zones",
+          "Central event lawn"
+        ]
+      },
+      {
+        "group": "Core Systems",
+        "items": [
+          "100% power backup",
+          "High-speed elevators",
+          "24/7 CCTV",
+          "Multi-tier gated security"
+        ]
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Construction",
+        "body": "World-class German pre-cast technology for flawless alignment, longevity and seismic resistance."
+      },
+      {
+        "label": "Finishes",
+        "body": "Premium vitrified tiles in living/dining; anti-skid ceramic in baths and balconies; heavy-duty aluminium sliding windows."
+      },
+      {
+        "label": "Eco-friendly",
+        "body": "Advanced rainwater harvesting, organic waste converters, automated STP and sustainable common-area energy management."
+      }
+    ],
+    "legal": [
+      {
+        "label": "Land Ownership & Title",
+        "body": "Clear, marketable title deeds; free from encumbrances or litigation."
+      },
+      {
+        "label": "A-Khata Property",
+        "body": "Under BBMP jurisdiction with clean history for seamless registration and mutation."
+      },
+      {
+        "label": "RERA Compliance",
+        "body": "Both phases registered under Karnataka RERA (001803 / 001804)."
+      },
+      {
+        "label": "Civic Approvals",
+        "body": "Plan sanctions, KSPCB clearances and structural certifications verified."
+      },
+      {
+        "label": "Bank Approvals",
+        "body": "Pre-approved for immediate home loans by SBI, HDFC, ICICI, Axis and other major lenders."
+      }
+    ],
+    "photos": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "brochureUrl": "https://drive.google.com/file/d/1rfZhhA_Y5iiZL4ZxkGp79nV9N91lzztK/view",
+    "tags": [
+      "RERA Registered",
+      "Direct Developer",
+      "Verified Project",
+      "Clear Title"
+    ],
+    "createdAt": "2026-06-12T09:00:00.000Z",
+    "updatedAt": "2026-06-16T09:00:00.000Z"
+  },
+  {
+    "id": "prop_godrej_park_retreat",
+    "slug": "godrej-park-retreat-sarjapur-road",
+    "name": "Godrej Park Retreat",
+    "developer": "Godrej Properties",
+    "locality": "Off Sarjapur Road",
+    "corridor": "Sarjapur Road",
+    "status": "under-construction",
+    "featured": true,
+    "verified": true,
+    "pricePerSqftMin": 11500,
+    "pricePerSqftMax": 13000,
+    "priceFromLabel": "₹11,500 / sq.ft. onwards",
+    "investmentSummary": "A nature-themed 13–15 acre Godrej township behind RGA Tech Park, with 85% open space, 700+ trees and a Miyawaki forest.",
+    "landAcres": 14,
+    "openSpacePct": 85,
+    "floorsLabel": "G+27",
+    "possession": "Phase 1 from late 2026; Phase 2 (#Grandeur) mid-2028.",
+    "configurations": [
+      {
+        "label": "1 BHK",
+        "phase": "Phase 1",
+        "note": "Smart layout for young professionals or investment."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 1",
+        "note": "Balanced family layout with utility balcony."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 1",
+        "note": "Spacious everyday living."
+      },
+      {
+        "label": "2 BHK",
+        "phase": "Phase 2",
+        "note": "Expansive functional balcony."
+      },
+      {
+        "label": "3 BHK 2T",
+        "phase": "Phase 2",
+        "note": "Large premium room sizing."
+      },
+      {
+        "label": "3 BHK 3T",
+        "phase": "Phase 2",
+        "note": "Enhanced privacy and ventilation."
+      }
+    ],
+    "rera": [
+      {
+        "phase": "Phase 1",
+        "number": "PRM/KA/RERA/1251/446/PR/280222/004736"
+      },
+      {
+        "phase": "Phase 2",
+        "number": "PRM/KA/RERA/1251/446/PR/130723/006056"
+      }
+    ],
+    "description": "Godrej Park Retreat is a premium, nature-themed residential township by Godrej Properties, designed around holistic green living. It blends expansive open spaces, dense forestry and massive modern clubhouses with top-tier connectivity to Bengaluru's core IT corridors, right behind RGA Tech Park.",
+    "whyThisProperty": [
+      "Massive 13–15 acre township with 85% open space",
+      "2.30-hectare green cover with 700+ planted trees",
+      "Unique Miyawaki forest and butterfly garden (Phase 2)",
+      "28,000–48,000 sq.ft. clubhouse with 50+ amenities",
+      "Directly serves RGA Tech Park, Wipro SEZ and ORR professionals"
+    ],
+    "idealFor": [
+      "End-users wanting a green, low-density township",
+      "Investors in the Sarjapur growth corridor",
+      "Rental-income buyers near RGA Tech Park / Wipro SEZ",
+      "NRI investors seeking a trusted Godrej brand"
+    ],
+    "locationAdvantages": [
+      {
+        "category": "IT Hubs",
+        "items": [
+          "RGA Tech Park",
+          "Wipro SEZ",
+          "Outer Ring Road",
+          "Electronic City"
+        ]
+      },
+      {
+        "category": "Schools",
+        "items": [
+          "Harvest International School",
+          "DPS East",
+          "Greenwood High"
+        ]
+      },
+      {
+        "category": "Hospitals",
+        "items": [
+          "Manipal Hospital (Sarjapur Road)",
+          "Motherhood Hospital"
+        ]
+      },
+      {
+        "category": "Transit",
+        "items": [
+          "Carmelaram Railway Station (3–4 km)",
+          "Upcoming Sarjapur Metro extension"
+        ]
+      },
+      {
+        "category": "Daily Life",
+        "items": [
+          "Decathlon",
+          "Major retail hubs"
+        ]
+      }
+    ],
+    "amenities": [
+      {
+        "group": "Clubhouse & Indoor",
+        "items": [
+          "Indoor gymnasium",
+          "Pool with toddler section",
+          "Mini-theatre",
+          "Co-working spaces",
+          "Yoga / aerobics deck",
+          "Multi-cuisine café"
+        ]
+      },
+      {
+        "group": "Sports & Outdoor",
+        "items": [
+          "Tennis, badminton & basketball courts",
+          "Futsal court",
+          "Cricket nets",
+          "Rock-climbing wall",
+          "Skating rink"
+        ]
+      },
+      {
+        "group": "Nature",
+        "items": [
+          "Forest trails",
+          "Reflexology pathway",
+          "Pet park",
+          "4 themed gardens",
+          "Senior-citizen zones"
+        ]
+      },
+      {
+        "group": "Core Systems",
+        "items": [
+          "100% power backup",
+          "High-speed elevators",
+          "24/7 CCTV",
+          "Secure gated entry"
+        ]
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Construction",
+        "body": "Seismically sound monolithic RCC (Mivan style) for superior wall finish and longevity."
+      },
+      {
+        "label": "Finishes",
+        "body": "Premium vitrified tiles in living spaces; anti-skid ceramic in baths and balconies; UPVC sliding windows with mosquito mesh."
+      },
+      {
+        "label": "Eco-friendly",
+        "body": "Automated rainwater harvesting, on-site STP, centralised solar water heating and solid-waste management."
+      }
+    ],
+    "legal": [
+      {
+        "label": "Land Ownership & Title",
+        "body": "Clear, marketable title deeds; free from encumbrances or litigation."
+      },
+      {
+        "label": "Joint Development Clearances",
+        "body": "All JD agreements between landowners and Godrej registered, stamped and legally binding."
+      },
+      {
+        "label": "RERA Compliance",
+        "body": "Both phases registered under Karnataka RERA (004736 / 006056)."
+      },
+      {
+        "label": "Civic Approvals",
+        "body": "Plan sanctions, environmental clearances and structural certifications verified."
+      },
+      {
+        "label": "Bank Approvals",
+        "body": "Pre-approved for home loans by SBI, HDFC, ICICI, Axis and other major lenders."
+      }
+    ],
+    "photos": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "brochureUrl": "https://drive.google.com/file/d/1lNNtnnCeqYvyaapnONSviWtmUj5z-PYz/view",
+    "tags": [
+      "RERA Registered",
+      "Direct Developer",
+      "Verified Project",
+      "Bank Approved"
+    ],
+    "createdAt": "2026-06-13T09:00:00.000Z",
+    "updatedAt": "2026-06-16T10:00:00.000Z"
+  },
+  {
+    "id": "prop_godrej_kada_agrahara",
+    "slug": "godrej-kada-agrahara-sarjapur-road",
+    "name": "Godrej Kada Agrahara (New Launch)",
+    "developer": "Godrej Properties",
+    "locality": "Kada Agrahara, Sarjapur Road",
+    "corridor": "Sarjapur Road",
+    "status": "pre-launch",
+    "featured": true,
+    "verified": true,
+    "pricePerSqftMin": 11500,
+    "pricePerSqftMax": 13000,
+    "priceFromLabel": "₹11,500 / sq.ft. (pre-launch)",
+    "investmentSummary": "Pre-launch Godrej landmark next to the upcoming SWIFT City, 2 iconic 33-floor towers, only 8 units/floor, first-mover pricing.",
+    "landAcres": 7.9,
+    "totalUnits": 500,
+    "floorsLabel": "3B+G+33",
+    "possession": "Pre-launch, priority allocations open. Connect for the launch timeline.",
+    "configurations": [
+      {
+        "label": "2 BHK",
+        "note": "Contemporary layout for nuclear families and yield seekers."
+      },
+      {
+        "label": "3 BHK 2T",
+        "note": "Optimised family utility with zero dead space."
+      },
+      {
+        "label": "3 BHK 3T",
+        "note": "Luxury sizing, enhanced privacy and open views."
+      }
+    ],
+    "rera": [
+      {
+        "number": "Pre-launch, RERA registration in process; documentation being structured for full compliance."
+      }
+    ],
+    "description": "An upcoming premium high-rise landmark by Godrej Properties in the booming Kada Agrahara corridor off Sarjapur Road, positioned right next to the futuristic SWIFT City. Two iconic towers (3B+G+33) house an exclusive, low-congestion community of ~500 residences with only 8 units per floor for maximum privacy.",
+    "whyThisProperty": [
+      "First-mover pre-launch pricing and priority unit selection",
+      "Adjacent to the upcoming multi-acre SWIFT City development",
+      "Only 8 units per floor for maximum privacy",
+      "2 iconic high-rise towers scaling 33 floors",
+      "One of Bangalore's fastest-growing appreciation corridors"
+    ],
+    "idealFor": [
+      "First-movers wanting the lowest entry price",
+      "Investors betting on the SWIFT City growth story",
+      "End-users seeking a low-density, private high-rise",
+      "NRI investors seeking early Godrej allocations"
+    ],
+    "locationAdvantages": [
+      {
+        "category": "IT Hubs",
+        "items": [
+          "Outer Ring Road corridor",
+          "Electronic City",
+          "Whitefield tech parks"
+        ]
+      },
+      {
+        "category": "Mega Infrastructure",
+        "items": [
+          "Upcoming SWIFT City (immediate vicinity)"
+        ]
+      },
+      {
+        "category": "Social Infrastructure",
+        "items": [
+          "Premium schools & hospitals along Sarjapur Main Road",
+          "High-end retail developments"
+        ]
+      },
+      {
+        "category": "Investment",
+        "items": [
+          "Fast-growing corridor with high appreciation and rental potential"
+        ]
+      }
+    ],
+    "amenities": [
+      {
+        "group": "Clubhouse & Indoor",
+        "items": [
+          "18,400 sq.ft. clubhouse (G+3)",
+          "Indoor gymnasium",
+          "Large pool with kids' section",
+          "Indoor games rooms",
+          "Co-working alcoves",
+          "Banquet hall"
+        ]
+      },
+      {
+        "group": "Sports & Fitness",
+        "items": [
+          "Jogging & cycling tracks",
+          "Half-basketball / badminton",
+          "Children's play parks"
+        ]
+      },
+      {
+        "group": "Nature",
+        "items": [
+          "Multi-tier central lawns",
+          "Elder-friendly sit-out plazas",
+          "Landscaped green avenues"
+        ]
+      },
+      {
+        "group": "Core Systems",
+        "items": [
+          "100% power backup",
+          "5 high-speed lifts per tower",
+          "24/7 CCTV",
+          "Gated checkpoints",
+          "3 basement parking levels"
+        ]
+      }
+    ],
+    "specifications": [
+      {
+        "label": "Construction",
+        "body": "Seismically sound monolithic RCC framed structure for longevity and high-quality masonry finishes."
+      },
+      {
+        "label": "Finishes",
+        "body": "High-grade vitrified tiles in living/dining/kitchen; anti-skid ceramic in baths and balconies; aluminium/UPVC sliding windows."
+      },
+      {
+        "label": "Eco-friendly",
+        "body": "Rainwater harvesting, on-site STP, organic waste converters and energy-efficient common-area lighting."
+      }
+    ],
+    "legal": [
+      {
+        "label": "Land Ownership & Title",
+        "body": "Clear, marketable and traceable title deeds; free from encumbrances or disputes."
+      },
+      {
+        "label": "Plan Sanction",
+        "body": "Final approvals being processed in alignment with BDA/BMRDA and zonal planning guidelines."
+      },
+      {
+        "label": "RERA Compliance",
+        "body": "Pre-launch documentation being structured for full Karnataka RERA registration."
+      },
+      {
+        "label": "Bank Approvals",
+        "body": "Layout being pre-vetted for seamless home-loan approvals from major lenders upon launch."
+      }
+    ],
+    "photos": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "brochureUrl": "https://drive.google.com/file/d/1nVhc1FtXzKq3XoOjsgeBqrVMdNLZ2jNl/view",
+    "tags": [
+      "Direct Developer",
+      "Verified Project",
+      "New Launch"
+    ],
+    "createdAt": "2026-06-14T09:00:00.000Z",
+    "updatedAt": "2026-06-16T11:00:00.000Z"
   }
 ]

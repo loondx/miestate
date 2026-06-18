@@ -1,100 +1,108 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {
-  Search,
-  SlidersHorizontal,
-  X,
-  ChevronDown,
-  MapPin,
-} from "lucide-react";
+import { Search, SlidersHorizontal, X, ChevronDown, ShieldCheck } from "lucide-react";
 import { PropertyGrid } from "./PropertyGrid";
-import { LOCALITIES } from "@/lib/data/localities";
 import { cn } from "@/lib/utils";
-import type { Property } from "@/types/property";
+import { PROJECT_STATUS_LABEL, type Property, type ProjectStatus } from "@/types/property";
 
-const BHK_OPTIONS = [1, 2, 3, 4];
-const BUDGETS = [0, 6000000, 8000000, 10000000, 12000000, 15000000, 100000000];
-const budgetLabel = (v: number) =>
-  v === 0 ? "No min" : v >= 100000000 ? "No max" : `₹${(v / 100000).toFixed(0)}L`;
+const midPpsf = (p: Property) => (p.pricePerSqftMin + p.pricePerSqftMax) / 2;
 
-type StatusFilter = "any" | "ready" | "construction";
-type SortKey = "recommended" | "price-asc" | "price-desc" | "newest";
+/** Build configuration filter options from the real listing data. */
+function deriveConfigs(properties: Property[]): string[] {
+  const set = new Set<string>();
+  for (const p of properties) {
+    const hay = `${p.name} ${p.configurations.map((c) => c.label).join(" ")}`;
+    for (const c of p.configurations) {
+      const m = c.label.match(/(\d+)\s*BHK/i);
+      if (m) set.add(`${m[1]} BHK`);
+    }
+    if (/villa/i.test(hay)) set.add("Villa");
+    if (/plot/i.test(hay)) set.add("Plot");
+  }
+  return Array.from(set).sort((a, b) => {
+    const na = parseInt(a), nb = parseInt(b);
+    if (!isNaN(na) && !isNaN(nb)) return na - nb;
+    if (!isNaN(na)) return -1;
+    if (!isNaN(nb)) return 1;
+    return a.localeCompare(b);
+  });
+}
+
+/** Does a property match a configuration token like "3 BHK", "Villa", "Plot"? */
+function matchesConfig(p: Property, config: string): boolean {
+  const hay = `${p.name} ${p.configurations.map((c) => c.label).join(" ")}`;
+  if (config === "Villa") return /villa/i.test(hay);
+  if (config === "Plot") return /plot/i.test(hay);
+  return p.configurations.some((c) => c.label.startsWith(config));
+}
+
+type SortKey = "recommended" | "ppsf-asc" | "ppsf-desc" | "newest";
 
 const SORTS: { key: SortKey; label: string }[] = [
   { key: "recommended", label: "Recommended" },
-  { key: "price-asc", label: "Price: low to high" },
-  { key: "price-desc", label: "Price: high to low" },
+  { key: "ppsf-asc", label: "Price/sqft: low to high" },
+  { key: "ppsf-desc", label: "Price/sqft: high to low" },
   { key: "newest", label: "Newest first" },
-];
-
-const STATUSES: { key: StatusFilter; label: string }[] = [
-  { key: "any", label: "Any" },
-  { key: "ready", label: "Ready to move" },
-  { key: "construction", label: "Under construction" },
 ];
 
 export function PropertyFilters({ properties }: { properties: Property[] }) {
   const [search, setSearch] = useState("");
-  const [bhk, setBhk] = useState<number | null>(null);
-  const [localities, setLocalities] = useState<string[]>([]);
-  const [minBudget, setMinBudget] = useState(0);
-  const [maxBudget, setMaxBudget] = useState(100000000);
-  const [status, setStatus] = useState<StatusFilter>("any");
+  const [developer, setDeveloper] = useState<string | null>(null);
+  const [corridor, setCorridor] = useState<string | null>(null);
+  const [config, setConfig] = useState<string | null>(null);
+  const [status, setStatus] = useState<ProjectStatus | null>(null);
+  const [verifiedOnly, setVerifiedOnly] = useState(false);
   const [sort, setSort] = useState<SortKey>("recommended");
   const [panelOpen, setPanelOpen] = useState(false);
 
-  function toggleLocality(name: string) {
-    setLocalities((prev) =>
-      prev.includes(name) ? prev.filter((l) => l !== name) : [...prev, name]
-    );
-  }
+  const developers = Array.from(new Set(properties.map((p) => p.developer)));
+  const corridors = Array.from(new Set(properties.map((p) => p.corridor)));
+  const statuses = Array.from(new Set(properties.map((p) => p.status)));
+  const configOptions = useMemo(() => deriveConfigs(properties), [properties]);
 
   function reset() {
     setSearch("");
-    setBhk(null);
-    setLocalities([]);
-    setMinBudget(0);
-    setMaxBudget(100000000);
-    setStatus("any");
+    setDeveloper(null);
+    setCorridor(null);
+    setConfig(null);
+    setStatus(null);
+    setVerifiedOnly(false);
   }
 
   const activeCount =
-    (bhk !== null ? 1 : 0) +
-    localities.length +
-    (minBudget > 0 ? 1 : 0) +
-    (maxBudget < 100000000 ? 1 : 0) +
-    (status !== "any" ? 1 : 0) +
+    (developer ? 1 : 0) +
+    (corridor ? 1 : 0) +
+    (config ? 1 : 0) +
+    (status ? 1 : 0) +
+    (verifiedOnly ? 1 : 0) +
     (search.trim() ? 1 : 0);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     const list = properties.filter((p) => {
-      if (q && !`${p.name} ${p.locality}`.toLowerCase().includes(q)) return false;
-      if (bhk !== null && (bhk === 4 ? p.bhk < 4 : p.bhk !== bhk)) return false;
-      if (localities.length && !localities.includes(p.locality)) return false;
-      if (p.price < minBudget || p.price > maxBudget) return false;
-      if (status === "ready" && !p.readyToMove) return false;
-      if (status === "construction" && p.readyToMove) return false;
+      if (q && !`${p.name} ${p.locality} ${p.developer}`.toLowerCase().includes(q))
+        return false;
+      if (developer && p.developer !== developer) return false;
+      if (corridor && p.corridor !== corridor) return false;
+      if (status && p.status !== status) return false;
+      if (verifiedOnly && !p.verified) return false;
+      if (config && !matchesConfig(p, config)) return false;
       return true;
     });
 
-    const rank = (p: Property) => (p.verificationStatus === "verified" ? 0 : 1);
     return [...list].sort((a, b) => {
-      if (sort === "price-asc") return a.price - b.price;
-      if (sort === "price-desc") return b.price - a.price;
-      if (sort === "newest")
-        return +new Date(b.createdAt) - +new Date(a.createdAt);
-      // recommended: verified first, then newest
-      return rank(a) - rank(b) || +new Date(b.createdAt) - +new Date(a.createdAt);
+      if (sort === "ppsf-asc") return midPpsf(a) - midPpsf(b);
+      if (sort === "ppsf-desc") return midPpsf(b) - midPpsf(a);
+      if (sort === "newest") return b.updatedAt.localeCompare(a.updatedAt);
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      return b.updatedAt.localeCompare(a.updatedAt);
     });
-  }, [properties, search, bhk, localities, minBudget, maxBudget, status, sort]);
-
-  const localityNames = LOCALITIES.map((l) => l.name);
+  }, [properties, search, developer, corridor, config, status, verifiedOnly, sort]);
 
   return (
     <div>
-      {/* ── Toolbar: search + sort ── */}
+      {/* Toolbar */}
       <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center">
         <div className="relative flex-1">
           <Search className="pointer-events-none absolute left-3.5 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
@@ -102,7 +110,7 @@ export function PropertyFilters({ properties }: { properties: Property[] }) {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by project or locality"
+            placeholder="Search by project, developer or locality"
             className="h-12 w-full rounded-xl border border-gray-200 bg-white pl-11 pr-10 text-[15px] text-gray-900 placeholder:text-gray-400 shadow-card focus:border-forest-600 focus-ring"
           />
           {search && (
@@ -117,7 +125,18 @@ export function PropertyFilters({ properties }: { properties: Property[] }) {
         </div>
 
         <div className="flex items-center gap-2.5">
-          {/* Mobile filter toggle */}
+          <button
+            onClick={() => setVerifiedOnly((v) => !v)}
+            aria-pressed={verifiedOnly}
+            className={cn(
+              "flex h-12 shrink-0 items-center gap-1.5 rounded-xl border px-4 text-sm font-semibold shadow-card transition-all active:scale-95",
+              verifiedOnly
+                ? "border-forest-700 bg-forest-700 text-white"
+                : "border-gray-200 bg-white text-gray-700 hover:border-forest-600 hover:text-forest-700"
+            )}
+          >
+            <ShieldCheck className="h-4 w-4" /> Verified
+          </button>
           <button
             onClick={() => setPanelOpen((v) => !v)}
             className="flex h-12 items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 text-sm font-semibold text-gray-700 shadow-card lg:hidden"
@@ -130,12 +149,11 @@ export function PropertyFilters({ properties }: { properties: Property[] }) {
             )}
           </button>
 
-          {/* Sort */}
           <div className="relative flex-1 sm:flex-none">
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as SortKey)}
-              aria-label="Sort properties"
+              aria-label="Sort projects"
               className="h-12 w-full appearance-none rounded-xl border border-gray-200 bg-white pl-4 pr-9 text-sm font-semibold text-gray-700 shadow-card focus:border-forest-600 focus-ring sm:w-auto"
             >
               {SORTS.map((s) => (
@@ -149,112 +167,69 @@ export function PropertyFilters({ properties }: { properties: Property[] }) {
         </div>
       </div>
 
-      {/* ── Filter panel ── */}
+      {/* Filter panel */}
       <div
         className={cn(
           "mt-3 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-card lg:block",
           panelOpen ? "block" : "hidden"
         )}
       >
-        <div className="grid gap-5 p-5 sm:grid-cols-2 lg:grid-cols-[auto_auto_1fr] lg:items-start lg:gap-8">
-          {/* BHK */}
+        <div className="grid gap-5 p-5 sm:grid-cols-2">
+          <Group label="Developer">
+            <div className="flex flex-wrap gap-2">
+              {developers.map((d) => (
+                <Pill key={d} active={developer === d} onClick={() => setDeveloper(developer === d ? null : d)}>
+                  {d}
+                </Pill>
+              ))}
+            </div>
+          </Group>
+          <Group label="Corridor">
+            <div className="flex flex-wrap gap-2">
+              {corridors.map((c) => (
+                <Pill key={c} active={corridor === c} onClick={() => setCorridor(corridor === c ? null : c)}>
+                  {c}
+                </Pill>
+              ))}
+            </div>
+          </Group>
           <Group label="Configuration">
-            <div className="flex gap-2">
-              {BHK_OPTIONS.map((n) => (
-                <Pill
-                  key={n}
-                  active={bhk === n}
-                  onClick={() => setBhk(bhk === n ? null : n)}
-                >
-                  {n === 4 ? "4+ BHK" : `${n} BHK`}
+            <div className="flex flex-wrap gap-2">
+              {configOptions.map((c) => (
+                <Pill key={c} active={config === c} onClick={() => setConfig(config === c ? null : c)}>
+                  {c}
                 </Pill>
               ))}
             </div>
           </Group>
-
-          {/* Budget */}
-          <Group label="Budget">
-            <div className="flex items-center gap-2">
-              <BudgetSelect
-                value={minBudget}
-                onChange={setMinBudget}
-                options={BUDGETS.slice(0, -1)}
-              />
-              <span className="text-gray-300">to</span>
-              <BudgetSelect
-                value={maxBudget}
-                onChange={setMaxBudget}
-                options={BUDGETS.slice(1)}
-              />
-            </div>
-          </Group>
-
-          {/* Status */}
-          <Group label="Availability">
+          <Group label="Status">
             <div className="flex flex-wrap gap-2">
-              {STATUSES.map((s) => (
-                <Pill
-                  key={s.key}
-                  active={status === s.key}
-                  onClick={() => setStatus(s.key)}
-                >
-                  {s.label}
+              {statuses.map((s) => (
+                <Pill key={s} active={status === s} onClick={() => setStatus(status === s ? null : s)}>
+                  {PROJECT_STATUS_LABEL[s]}
                 </Pill>
               ))}
-            </div>
-          </Group>
-        </div>
-
-        {/* Locality */}
-        <div className="border-t border-gray-100 p-5">
-          <Group label="Locality">
-            <div className="flex flex-wrap gap-2">
-              {localityNames.map((name) => {
-                const active = localities.includes(name);
-                return (
-                  <Pill key={name} active={active} onClick={() => toggleLocality(name)}>
-                    <MapPin className="h-3 w-3" /> {name}
-                  </Pill>
-                );
-              })}
             </div>
           </Group>
         </div>
       </div>
 
-      {/* ── Active filters + count ── */}
+      {/* Count + active chips */}
       <div className="mb-5 mt-4 flex flex-wrap items-center gap-2">
         <p className="text-sm text-gray-500">
           <span className="font-semibold text-gray-900">{filtered.length}</span>{" "}
-          verified {filtered.length === 1 ? "property" : "properties"}
+          {filtered.length === 1 ? "project" : "projects"}
         </p>
-
         {activeCount > 0 && (
           <>
             <span className="text-gray-300">·</span>
-            {bhk !== null && (
-              <Chip onRemove={() => setBhk(null)}>{bhk === 4 ? "4+ BHK" : `${bhk} BHK`}</Chip>
+            {verifiedOnly && <Chip onRemove={() => setVerifiedOnly(false)}>Verified only</Chip>}
+            {developer && <Chip onRemove={() => setDeveloper(null)}>{developer}</Chip>}
+            {corridor && <Chip onRemove={() => setCorridor(null)}>{corridor}</Chip>}
+            {config && <Chip onRemove={() => setConfig(null)}>{config}</Chip>}
+            {status && (
+              <Chip onRemove={() => setStatus(null)}>{PROJECT_STATUS_LABEL[status]}</Chip>
             )}
-            {status !== "any" && (
-              <Chip onRemove={() => setStatus("any")}>
-                {STATUSES.find((s) => s.key === status)?.label}
-              </Chip>
-            )}
-            {(minBudget > 0 || maxBudget < 100000000) && (
-              <Chip
-                onRemove={() => {
-                  setMinBudget(0);
-                  setMaxBudget(100000000);
-                }}
-              >
-                {budgetLabel(minBudget)} – {budgetLabel(maxBudget)}
-              </Chip>
-            )}
-            {localities.map((l) => (
-              <Chip key={l} onRemove={() => toggleLocality(l)}>
-                {l}
-              </Chip>
-            ))}
             <button
               onClick={reset}
               className="ml-1 text-sm font-semibold text-forest-700 hover:underline"
@@ -267,12 +242,8 @@ export function PropertyFilters({ properties }: { properties: Property[] }) {
 
       {filtered.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gray-300 bg-gray-50 py-16 text-center">
-          <p className="font-semibold text-gray-800">
-            No properties match your filters.
-          </p>
-          <p className="mt-1 text-sm text-gray-500">
-            Try widening your budget or removing a locality.
-          </p>
+          <p className="font-semibold text-gray-800">No projects match your filters.</p>
+          <p className="mt-1 text-sm text-gray-500">Try removing a filter or two.</p>
           <button
             onClick={reset}
             className="mt-4 inline-flex h-11 items-center rounded-lg bg-forest-700 px-5 text-sm font-semibold text-white shadow-cta active:scale-[0.98]"
@@ -287,8 +258,7 @@ export function PropertyFilters({ properties }: { properties: Property[] }) {
   );
 }
 
-/* ── small building blocks ── */
-
+/* building blocks */
 function Group({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
@@ -342,32 +312,5 @@ function Chip({
         <X className="h-3 w-3" />
       </button>
     </span>
-  );
-}
-
-function BudgetSelect({
-  value,
-  onChange,
-  options,
-}: {
-  value: number;
-  onChange: (v: number) => void;
-  options: number[];
-}) {
-  return (
-    <div className="relative">
-      <select
-        value={String(value)}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="h-11 appearance-none rounded-lg border border-gray-200 bg-white pl-3 pr-8 text-sm font-medium text-gray-700 focus:border-forest-600 focus-ring"
-      >
-        {options.map((v) => (
-          <option key={v} value={v}>
-            {budgetLabel(v)}
-          </option>
-        ))}
-      </select>
-      <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-    </div>
   );
 }

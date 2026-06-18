@@ -10,7 +10,7 @@ export default function NotFound() {
           <ShieldCheck className="h-5 w-5" />
         </span>
         <span className="font-display text-xl font-bold text-forest-900">
-          miestate
+          MI Estate
         </span>
       </Link>
       <p className="mono text-5xl font-bold text-forest-800">404</p>

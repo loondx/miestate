@@ -40,7 +40,7 @@ function LoginForm() {
             <ShieldCheck className="h-5 w-5" />
           </span>
           <span className="font-display text-xl font-bold text-forest-900">
-            miestate admin
+            MI Estate admin
           </span>
         </div>
         <h1 className="text-lg font-semibold text-gray-900">Sign in</h1>

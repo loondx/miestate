@@ -5,8 +5,7 @@ import path from "path";
  * MVP file-backed store. Reads/writes JSON files in /lib/data.
  *
  * NOTE: On Vercel's serverless filesystem these writes are ephemeral and will
- * not persist across deploys/cold starts. This is intentional for the MVP —
- * Phase 2 swaps these functions for Supabase calls with the same signatures.
+ * not persist across deploys/cold starts. This is intentional for the MVP, * Phase 2 swaps these functions for Supabase calls with the same signatures.
  */
 
 const DATA_DIR = path.join(process.cwd(), "lib", "data");
@@ -31,8 +30,6 @@ async function writeCollection<T>(file: string, data: T[]): Promise<void> {
 export const FILES = {
   properties: "properties.json",
   leads: "leads.json",
-  reports: "reports.json",
-  transactions: "transactions.json",
 } as const;
 
 export function getAll<T>(file: string) {
