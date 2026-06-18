@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "MI Estate: Verified Premium Properties. Expert Guidance.";
+export const alt = "MI Estate: Find Your Ideal Home in Bangalore.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -24,34 +24,49 @@ export default function Og() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 16,
+            gap: 14,
             fontSize: 34,
-            color: "#67BF84",
+            color: "#E7B84B",
             fontWeight: 700,
           }}
         >
-          ✓ MI Estate
+          🏠 MI Estate
         </div>
         <div
           style={{
             marginTop: 28,
-            fontSize: 76,
+            fontSize: 74,
             fontWeight: 800,
             lineHeight: 1.05,
           }}
         >
-          Verified Premium Properties.
+          Find Your Ideal Home in Bangalore
         </div>
         <div
           style={{
             marginTop: 28,
-            fontSize: 34,
+            fontSize: 33,
             color: "#CDE9EE",
-            maxWidth: 900,
+            maxWidth: 980,
           }}
         >
-          Expert guidance and verified, RERA-registered projects from trusted
-          developers across Bangalore. Advisory, not sales pressure.
+          Verified projects to buy, rent or resell. Honest advice, RERA-checked
+          listings and end-to-end support across Bangalore.
+        </div>
+        <div
+          style={{
+            marginTop: 40,
+            display: "flex",
+            gap: 14,
+            fontSize: 24,
+            color: "#9FD6C0",
+          }}
+        >
+          <span>✓ Verified Projects</span>
+          <span style={{ color: "#3A6470" }}>•</span>
+          <span>✓ Honest Advice</span>
+          <span style={{ color: "#3A6470" }}>•</span>
+          <span>✓ End-to-End Support</span>
         </div>
       </div>
     ),

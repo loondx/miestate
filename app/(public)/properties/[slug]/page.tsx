@@ -48,9 +48,18 @@ export async function generateMetadata({
     keywords: [p.name, p.developer, p.locality, p.corridor, "Bangalore", "RERA"],
     alternates: { canonical: `/properties/${p.slug}` },
     openGraph: {
+      type: "website",
       title,
       description: desc,
-      images: p.photos[0] ? [{ url: p.photos[0] }] : undefined,
+      url: `${SITE.url.replace(/\/$/, "")}/properties/${p.slug}`,
+      siteName: "MI Estate",
+      // og:image is provided by the dynamic opengraph-image.tsx in this route.
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: desc,
+      // twitter:image is provided by twitter-image.tsx in this route.
     },
   };
 }

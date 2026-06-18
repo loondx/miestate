@@ -22,9 +22,19 @@ export const metadata: Metadata = {
     "MI Estate helps you buy, rent and resell verified property in Bangalore across Sarjapur Road, Whitefield, KR Puram, ORR, Electronic City and North Bangalore. Free consultation, honest advice and site visits arranged. Call or WhatsApp Rohit Kumar today.",
   alternates: { canonical: "/" },
   openGraph: {
+    type: "website",
+    siteName: "MI Estate",
     title: "Find Your Ideal Home in Bangalore | MI Estate",
     description:
       "Verified projects, honest advice and end-to-end support to buy, rent or resell property in Bangalore. Book a free consultation and site visit.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Find Your Ideal Home in Bangalore | MI Estate",
+    description:
+      "Verified projects, honest advice and end-to-end support to buy, rent or resell property in Bangalore.",
+    images: ["/opengraph-image"],
   },
 };
 
