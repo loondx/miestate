@@ -84,7 +84,7 @@ export default async function AdminDashboard() {
         <h2 className="mb-3 font-semibold text-gray-900">Recent leads</h2>
         {recent.length === 0 ? (
           <p className="rounded-lg border border-dashed border-gray-300 bg-white py-12 text-center text-sm text-gray-500">
-            No leads yet. Share miestate.in with your next buyer.
+            No leads yet. Share miestate.co.in with your next buyer.
           </p>
         ) : (
           <div className="overflow-hidden rounded-lg border border-gray-200 bg-white">
