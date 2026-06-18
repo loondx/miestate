@@ -14,10 +14,14 @@ export async function getPropertyBySlug(
 
 export async function getPublicProperties(): Promise<Property[]> {
   const all = await getProperties();
-  return all.filter((p) => p.status !== "sold");
+  // Featured first, then most recently updated.
+  return [...all].sort((a, b) => {
+    if (a.featured !== b.featured) return a.featured ? -1 : 1;
+    return b.updatedAt.localeCompare(a.updatedAt);
+  });
 }
 
-/** Super-built-up ₹/sqft, used in the fair-price comparison. */
-export function pricePerSqft(p: Property): number {
-  return Math.round(p.price / p.sqftSuperBuiltUp);
+/** Mid-point ₹/sqft, handy for sorting and rough comparisons. */
+export function midPricePerSqft(p: Property): number {
+  return Math.round((p.pricePerSqftMin + p.pricePerSqftMax) / 2);
 }

@@ -1,25 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { MessageCircle, ShieldCheck } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { MessageCircle, Phone } from "lucide-react";
 import { whatsappLink } from "@/lib/whatsapp";
+import { calendlyLink, CALENDLY_EVENT } from "@/lib/calendly";
+import { PHONE_NUMBER } from "@/lib/config";
 import { cn } from "@/lib/utils";
-
-function isDetailPage(pathname: string | null) {
-  return /^\/properties\/[^/]+$/.test(pathname || "");
-}
 
 /**
  * Desktop floating WhatsApp button (lg+ only). On mobile we use the richer
  * MobileCTADock below instead, so the two never compete for the same corner.
- * Hidden on property detail pages, which carry their own sticky CTA.
  */
 export function WhatsAppFloat({ message }: { message: string }) {
-  const pathname = usePathname();
-  if (isDetailPage(pathname)) return null;
-
   return (
     <a
       href={whatsappLink(message)}
@@ -40,12 +32,11 @@ export function WhatsAppFloat({ message }: { message: string }) {
 }
 
 /**
- * App-style persistent action dock for mobile (hidden on lg+). Appears after
- * the user scrolls past the hero. Gives every page a single, obvious next step
- * the way native apps do — the pattern serious products use, not a broker site.
+ * App-style persistent action dock for mobile (hidden on lg+). Appears after the
+ * user scrolls past the hero, giving every page a single obvious next step:
+ * Schedule a consultation, with sticky Call and WhatsApp always one tap away.
  */
 export function MobileCTADock({ message }: { message: string }) {
-  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -54,9 +45,6 @@ export function MobileCTADock({ message }: { message: string }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  // Detail pages have their own sticky bar.
-  if (isDetailPage(pathname)) return null;
 
   return (
     <div
@@ -67,20 +55,20 @@ export function MobileCTADock({ message }: { message: string }) {
       )}
     >
       <div className="flex items-center gap-2.5 px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
-        <Link
-          href="/services#report"
-          className="flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-forest-700 text-sm font-semibold text-white shadow-cta active:scale-[0.98]"
-        >
-          <ShieldCheck className="h-4 w-4" /> Get report · ₹4,999
-        </Link>
         <a
-          href={whatsappLink(message)}
+          href={calendlyLink({ event: CALENDLY_EVENT.consultation })}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Talk to us on WhatsApp"
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#25D366] text-white shadow-cta active:scale-95"
+          className="flex h-12 flex-1 items-center justify-center rounded-xl bg-forest-700 text-sm font-semibold text-white shadow-cta active:scale-[0.98]"
         >
-          <MessageCircle size={20} />
+          Schedule consultation
+        </a>
+        <a
+          href={`tel:${PHONE_NUMBER}`}
+          aria-label="Call us"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-forest-50 text-forest-700 ring-1 ring-forest-100 active:scale-95"
+        >
+          <Phone size={20} />
         </a>
       </div>
     </div>

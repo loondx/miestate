@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "miestate: Know before you pay.";
+export const alt = "MI Estate: Verified Premium Properties. Expert Guidance.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,17 +30,17 @@ export default function Og() {
             fontWeight: 700,
           }}
         >
-          ✓ miestate
+          ✓ MI Estate
         </div>
         <div
           style={{
             marginTop: 28,
-            fontSize: 88,
+            fontSize: 76,
             fontWeight: 800,
             lineHeight: 1.05,
           }}
         >
-          Know before you pay.
+          Verified Premium Properties.
         </div>
         <div
           style={{
@@ -50,8 +50,8 @@ export default function Og() {
             maxWidth: 900,
           }}
         >
-          Complete property risk report before the token amount. Legal checks,
-          fair price, builder reputation, all in 48 hours.
+          Expert guidance and verified, RERA-registered projects from trusted
+          developers across Bangalore. Advisory, not sales pressure.
         </div>
       </div>
     ),

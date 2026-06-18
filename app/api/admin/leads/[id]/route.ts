@@ -10,8 +10,7 @@ const patchSchema = z.object({
     .optional(),
   notes: z.string().max(1000).optional(),
   followUpDate: z.string().optional(),
-  budget: z.coerce.number().optional(),
-  locality: z.string().optional(),
+  budget: z.string().max(40).optional(),
   propertyInterest: z.string().optional(),
 });
 

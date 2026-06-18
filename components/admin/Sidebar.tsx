@@ -7,8 +7,6 @@ import {
   LayoutDashboard,
   Users,
   Building2,
-  FileText,
-  IndianRupee,
   LogOut,
   Menu,
   X,
@@ -20,8 +18,6 @@ const NAV = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { href: "/admin/leads", label: "Leads", icon: Users },
   { href: "/admin/properties", label: "Properties", icon: Building2 },
-  { href: "/admin/reports", label: "Reports", icon: FileText },
-  { href: "/admin/revenue", label: "Revenue", icon: IndianRupee },
 ];
 
 export function Sidebar() {
@@ -63,7 +59,7 @@ export function Sidebar() {
     <>
       <div className="flex items-center justify-between border-b border-white/10 bg-forest-900 px-4 py-3 text-white md:hidden">
         <Link href="/admin" className="flex items-center gap-2 font-display font-semibold">
-          <ShieldCheck className="h-5 w-5 text-gold-400" /> miestate admin
+          <ShieldCheck className="h-5 w-5 text-gold-400" /> MI Estate admin
         </Link>
         <button onClick={() => setOpen((v) => !v)} aria-label="Menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -87,7 +83,7 @@ export function Sidebar() {
           href="/admin"
           className="mb-6 flex items-center gap-2 px-2 font-display text-lg font-semibold text-white"
         >
-          <ShieldCheck className="h-6 w-6 text-gold-400" /> miestate
+          <ShieldCheck className="h-6 w-6 text-gold-400" /> MI Estate
         </Link>
         {links}
         <button

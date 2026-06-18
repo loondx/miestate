@@ -7,14 +7,17 @@ export function whatsappLink(message: string): string {
 }
 
 export const WA = {
-  home: "Hi miestate, I want to buy a property in Bangalore. Can you help?",
+  home: "Hi MI Estate, I'd like guidance on buying a verified property in Bangalore. Can we talk?",
   properties:
-    "Hi miestate, I'm browsing your verified properties. Can we talk?",
-  services:
-    "Hi miestate, I'd like to know more about the Property Risk Report.",
-  contact: "Hi miestate, I have an enquiry.",
+    "Hi MI Estate, I'm looking at your handpicked projects. Can you help me shortlist?",
+  consultation:
+    "Hi MI Estate, I'd like to schedule a free property consultation.",
+  siteVisit:
+    "Hi MI Estate, I'd like to schedule a site visit for one of your verified projects.",
+  contact: "Hi MI Estate, I have an enquiry about your properties.",
 } as const;
 
+/** Pre-filled WhatsApp message for a specific project. */
 export function msgForProperty(name: string, locality: string): string {
-  return `Hi miestate, I'm interested in ${name} in ${locality}. Can I get a risk report?`;
+  return `Hi MI Estate, I'm interested in ${name} (${locality}). I'd like a consultation / site visit and the cost sheet.`;
 }

@@ -34,18 +34,18 @@ export function PropertyGallery({
         />
       </div>
       {safe.length > 1 && (
-        <div className="mt-3 flex gap-3 overflow-x-auto pb-1">
+        <div className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-6">
           {safe.map((src, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
               aria-label={`View photo ${i + 1}`}
               className={cn(
-                "relative h-16 w-24 shrink-0 overflow-hidden rounded-md border-2",
-                i === active ? "border-forest-600" : "border-transparent"
+                "relative aspect-[4/3] w-full overflow-hidden rounded-md border-2",
+                i === active ? "border-forest-600" : "border-transparent hover:border-gray-200"
               )}
             >
-              <Photo src={src} alt="" sizes="96px" />
+              <Photo src={src} alt="" sizes="(max-width: 640px) 25vw, 120px" />
             </button>
           ))}
         </div>
